@@ -42,26 +42,24 @@ labels  = [   0,   2,   1,   1,   2,   0 ]
 weights = [ 0.1, 0.5, 0.2, 0.3, 0.8, 0.6 ]
 ```
 
-__Solution__
-
-1. Initialize a list with a size of the number of labels.
-
-2. Iterate for each weight and increment the value on its label.
+__Result__
 
 ```python
-weighted_sum = [ 0.0, 0.0, 0.0 ]
-
-for idx in range(len(weights)):
-    weighted_sum[labels[idx]] += weights[idx]
-
-assert weighted_sum == [ 0.7, 0.5, 1.3 ]
+assert weighted_sum == [0.7, 0.5, 1.3]
 ```
-
-__Runtime Complexity: O(N)__ where N is the number of elements
 
 ---
 
-# List comprehension
+# Problem - Weighted sum on labels
+
+#### For loop
+
+```python
+for idx in range(len(weights)):
+    weighted_sum[labels[idx]] += weights[idx]
+```
+
+#### List comprehension
 
 ```python
 weighted_sum = [
@@ -71,22 +69,7 @@ weighted_sum = [
 ]
 ```
 
-__Runtime Complexity: O(M * N)__
-
-where M is the number of labels and N is the number of elements
-
----
-
-# Numpy
-
-```python
-weighted_sum = [
-    np.where(labels == label, weights, 0.0).sum()
-    for label in range(max(labels))
-]
-```
-
-or even, for a better performance, 
+#### Numpy
 
 ```python
 weighted_sum = [
@@ -94,11 +77,6 @@ weighted_sum = [
     for label in range(max(labels))
 ]
 ```
-
-__Runtime Complexity: O(M * N)__
-
-where M depends on Python runtime and N depends on Numpy runtime
-
 ---
 
 ##  Performance - Python O(N) v.s. Numpy O(M x N)
