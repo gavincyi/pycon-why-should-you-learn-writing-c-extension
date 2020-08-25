@@ -9,15 +9,20 @@ class: center, middle
 
 ---
 
-# Background
+# My Background
 
-- AXA IM Chorus Ltd is a quantitative asset management fund.
+.center[
+<img src="out/profile.jpg" width=30%>
+]
 
-- Develop in Python
+- Working as a principal quant developer in AXA IM Chorus Ltd, which
+is a quantitative asset management firm.
 
-- Research in Python
+- Major language: Python
 
-- Manage the portfolio in Python
+- Worked in Fidessa as a C++ developer
+
+- Personal Python open source projects: [BitcoinExchangeFH](https://github.com/BitcoinExchangeFH/BitcoinExchangeFH), [LightMatchingEngine](https://github.com/gavincyi/LightMatchingEngine)
 
 ---
 
@@ -420,18 +425,6 @@ def get_numba_risk_exposures(labels, weights, num_of_labels):
 
 ---
 
-# Parting words
-
-.center[
-"If you’re not at all interested in performance, shouldn’t you be in the Python room down the hall?"
-]
-
-.right[
-##### Effective Modern C++, Scott Meyers
-]
-
-
----
 
 class: center, middle
 
