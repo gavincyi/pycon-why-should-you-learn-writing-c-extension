@@ -371,19 +371,11 @@ def get_numba_risk_exposures(labels, weights, num_of_labels):
 
 # Performance - Cython v.s. pybind11 v.s. Numba
 
-<div class="center">
-.center.pure-table.pure-table-bordered[
-|   labels |   cython |   pybind11 |   numba |
-|---------:|---------:|-----------:|--------:|
-|       10 |  4.98033 |    3.89457 | 2.06971 |
-|       20 |  4.87757 |    3.85737 | 1.99318 |
-|       50 |  4.80866 |    3.83329 | 1.95670 |
-|       75 |  4.63414 |    3.88455 | 1.91998 |
-|      100 |  4.64511 |    3.87454 | 1.90687 |
+.center[
+<img src="out/cython_pybind11_numba.png" width=50% />
 ]
 
 .center[###### Median time of 1000 runs on the weighted sum on labels (1000 instruments) (in microseconds)]
-</div>
 
 ---
 
