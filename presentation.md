@@ -391,21 +391,25 @@ def get_numba_risk_exposures(labels, weights, num_of_labels):
 
 ### Cython
 
-Pros: Still a very stable tool for development. Minimal infrastructure requirement.
+__Pros__: Still a very stable tool for development. Minimal infrastructure requirement.
 
-Cons: Does not catch up with the model development tools, e.g. GPU programming
+__Cons__: Does not catch up with the model development tools, e.g. GPU programming
 
 ### Pybind11
 
-Pros: Excellent performance
+__Pros__: Excellent performance
 
-Cons: Requires knowledge / experience in C / C++ development
+__Cons__: Requires knowledge / experience in C / C++ development
+
+---
+
+# Comparison
 
 ### Numba
 
-Pros: Excellent JIT compilation performance. Best performance in interactive usage.
+__Pros__: Excellent JIT compilation performance. Best performance in interactive usage.
 
-Cons: Distribution. Unclear switch between nopython and object mode.
+__Cons__: Distribution. Unclear switch between nopython and object mode.
 
 ---
 
