@@ -371,6 +371,7 @@ def get_numba_risk_exposures(labels, weights, num_of_labels):
 
 # Performance - Cython v.s. pybind11 v.s. Numba
 
+<div class="center">
 .center.pure-table.pure-table-bordered[
 |   labels |   cython |   pybind11 |   numba |
 |---------:|---------:|-----------:|--------:|
@@ -381,47 +382,30 @@ def get_numba_risk_exposures(labels, weights, num_of_labels):
 |      100 |  4.64511 |    3.87454 | 1.90687 |
 ]
 
-
 .center[###### Median time of 1000 runs on the weighted sum on labels (1000 instruments) (in microseconds)]
+</div>
 
 ---
 
-# Why do we still learn writing C extension?
+# Comparison
 
+### Cython
 
-```python
-from numba import jit
+Pros: Still a very stable tool for development. Minimal infrastructure requirement.
 
-@jit
-def get_numba_risk_exposures(labels, weights, num_of_labels):
-  risk_exposures = np.zeros(num_of_labels, dtype=np.float64)
-  weight_len = len(weights)
+Cons: Does not catch up with the model development tools, e.g. GPU programming
 
-  for idx in range(weight_len):
-    assert labels[idx] < num_of_labels, (
-        'Label at index %s does not align the specified number of labels' % idx
-    )
-    risk_exposures[labels[idx]] += weights[idx]
+### Pybind11
 
-  return risk_exposures
-```
----
+Pros: Excellent performance
 
-# Why do we still learn writing C extension?
+Cons: Requires knowledge / experience in C / C++ development
 
-- Numba fails over to object mode if any line in the function fails to compile into the nopython mode
+### Numba
 
-- Scalability 
+Pros: Excellent JIT compilation performance. Best performance in interactive usage.
 
- *  Exception handling: Only constant string can be thrown out in nopython mode
-
- *  Limited support on object oriented design and ahead of time compilation
-
-- Distribution 
-
- * Numba requires llvmlite, which requires Python 3.6+ and LLVM 7.0.x
-
- * Exception handling is only available until Python 3.7
+Cons: Distribution. Unclear switch between nopython and object mode.
 
 ---
 
