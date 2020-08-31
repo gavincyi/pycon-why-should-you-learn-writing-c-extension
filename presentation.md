@@ -11,8 +11,8 @@ class: center, middle
 
 # My Background
 
-.center[
-<img src="out/profile.jpg" width=30%>
+.left[
+<img src="out/profile.jpeg" width=30% />
 ]
 
 - Working as a principal quant developer in AXA IM Chorus Ltd, which
