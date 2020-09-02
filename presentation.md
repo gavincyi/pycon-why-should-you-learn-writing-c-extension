@@ -11,8 +11,8 @@ class: center, middle
 
 # My Background
 
-.left[
-<img src="out/profile.jpeg" width=30% />
+.center[
+<img src="out/profile.jpeg" width=40% />
 ]
 
 - Working as a principal quant developer in AXA IM Chorus Ltd, which
@@ -239,23 +239,13 @@ cpdef get_cython_cpdef_risk_exposures(
 
 ---
 
-# Cython - Classical approach
+# Cython - Performance improves greatly working in the array memory view
 
-- Performance improves greatly working in the array memory view
+.center[
+<img src="out/cython_def_cpdef.png" width=50% />
 
-<div class="center">
-.center.pure-table.pure-table-bordered[
-|   labels |   python |   cython (def) |   cython (cpdef) |
-|---------:|---------:|---------------:|-----------------:|
-|       10 |  612.48  |        452.210 |            4.901 |
-|       20 |  656.188 |        485.757 |            4.952 |
-|       50 |  663.531 |        494.514 |            4.870 |
-|       75 |  645.385 |        477.440 |            4.857 |
-|      100 |  643.298 |        474.337 |            4.917 |
+###### Median time of 1000 runs on the weighted sum on labels (1000 instruments) (in microseconds)
 ]
-
-.center[###### Median time of 1000 runs on the weighted sum on labels (1000 instruments) (in microseconds)]
-</div>
 
 ---
 
@@ -372,10 +362,10 @@ def get_numba_risk_exposures(labels, weights, num_of_labels):
 # Performance - Cython v.s. pybind11 v.s. Numba
 
 .center[
-<img src="out/cython_pybind11_numba.png" width=50% />
-]
+<img src="out/cython_pybind11_numba.png" width=40% />
 
-.center[###### Median time of 1000 runs on the weighted sum on labels (1000 instruments) (in microseconds)]
+###### Median time of 1000 runs on the weighted sum on labels (1000 instruments) (in microseconds)
+]
 
 ---
 
