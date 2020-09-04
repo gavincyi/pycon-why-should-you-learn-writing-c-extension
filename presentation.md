@@ -415,7 +415,7 @@ __Cons__: Requires knowledge / experience in C / C++ development
 
 __Pros__: Excellent JIT compilation performance. Best performance in interactive usage.
 
-__Cons__: Distribution. Insufficient to object oriented design.
+__Cons__: Distribution. Insufficient support to object oriented design.
 
 ---
 
