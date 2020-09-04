@@ -354,6 +354,30 @@ def get_numba_risk_exposures(labels, weights, num_of_labels):
   return risk_exposures
 ```
 
+---
+
+# Numba - Ahead of time compilation
+
+```python
+from numba.pycc import CC
+
+cc = CC('risk_exposures')
+
+
+@cc.export('get_numba_aot_risk_exposures', 'f8[:](i8[:], f8[:], i8)')
+def _get_numba_aot_risk_exposures(labels, weights, num_of_labels):
+  risk_exposures = np.empty_like(weights)
+  weight_len = len(weights)
+
+  for idx in range(weight_len):
+      risk_exposures[labels[idx]] += weights[idx]
+
+  return risk_exposures
+
+if __name__ == '__main__':
+    cc.compile()
+```
+
 --- 
 
 ---
@@ -391,7 +415,7 @@ __Cons__: Requires knowledge / experience in C / C++ development
 
 __Pros__: Excellent JIT compilation performance. Best performance in interactive usage.
 
-__Cons__: Distribution. Unclear switch between nopython and object mode.
+__Cons__: Distribution. Insufficient to object oriented design.
 
 ---
 
