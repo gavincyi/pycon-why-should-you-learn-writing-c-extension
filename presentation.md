@@ -386,7 +386,7 @@ if __name__ == '__main__':
 # Performance - Cython v.s. pybind11 v.s. Numba
 
 .center[
-<img src="out/cython_pybind11_numba.png" width=40% />
+<img src="out/cython_pybind11_numba.png" width=100% />
 
 ###### Median time of 1000 runs on the weighted sum on labels (1000 instruments) (in microseconds)
 ]
